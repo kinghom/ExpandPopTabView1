@@ -45,7 +45,7 @@ public class ExpandPopTabActivity extends AppCompatActivity {
     public void addItem(ExpandPopTabView expandTabView, List<KeyValueBean> lists, String defaultSelect, String defaultShowText) {
         PopOneListView popOneListView = new PopOneListView(this);
         popOneListView.setDefaultSelectByValue(defaultSelect);
-       //popViewOne.setDefaultSelectByKey(defaultSelect);
+        //popViewOne.setDefaultSelectByKey(defaultSelect);
         popOneListView.setCallBackAndData(lists, expandTabView, new PopOneListView.OnSelectListener() {
             @Override
             public void getValue(String key, String value) {
@@ -72,7 +72,7 @@ public class ExpandPopTabActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(expandTabView != null){
+        if (expandTabView != null) {
             expandTabView.onExpandPopView();
         }
     }

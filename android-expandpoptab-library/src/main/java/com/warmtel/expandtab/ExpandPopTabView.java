@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
@@ -58,8 +62,13 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
             }
         }
         mContext = context;
-        mDisplayWidth = ((Activity) mContext).getWindowManager().getDefaultDisplay().getWidth();
-        mDisplayHeight = ((Activity) mContext).getWindowManager().getDefaultDisplay().getHeight();
+        /*mDisplayWidth = ((Activity) mContext).getWindowManager().getDefaultDisplay().getWidth();
+        mDisplayHeight = ((Activity) mContext).getWindowManager().getDefaultDisplay().getHeight();*/
+        WindowManager windowManager = ((Activity) mContext).getWindowManager();
+        DisplayMetrics dm = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(dm);
+        mDisplayWidth = dm.widthPixels;
+        mDisplayHeight = dm.heightPixels;
         setOrientation(LinearLayout.HORIZONTAL);
     }
 
@@ -160,7 +169,15 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
         if (mPopupWindow.getContentView() != mViewLists.get(mSelectPosition)) {
             mPopupWindow.setContentView(mViewLists.get(mSelectPosition));
         }
-        mPopupWindow.showAsDropDown(this, 0, 0);
+        //mPopupWindow.showAsDropDown(this, 0, 0);
+        //解决7.0的popwindow在上方问题
+        if(Build.VERSION.SDK_INT<24){
+            mPopupWindow.showAsDropDown(this, 0, 0);
+        }else {
+            int[] location = new int[2];
+            this.getLocationOnScreen(location);
+            mPopupWindow.showAtLocation(this, Gravity.NO_GRAVITY,0,location[1] + this.getHeight());
+        }
     }
 
     @Override

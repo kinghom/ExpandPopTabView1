@@ -16,7 +16,7 @@
             android:layout_weight="1"
             android:scrollbars="none"
             android:dividerHeight="1px"
-            android:divider="#dcdcdc"
+            android:divider="@color/no_color"
             android:fadingEdgeLength="0dip"
             android:background="@color/white" >
         </ListView>
@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:divider="@null"
             android:fadingEdgeLength="0dip"
-            android:background="@color/expand_tab_popview_item_press_color" >
+            android:background="@color/main_gray" >
         </ListView>
 
 </merge>

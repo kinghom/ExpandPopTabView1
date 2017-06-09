@@ -6,8 +6,9 @@
     android:gravity="center"
     android:textOff="@null"
     android:textOn="@null"
+    android:layout_centerInParent="true"
     android:background="@drawable/expand_tab_item_selector"
-    android:singleLine="true"
+    android:lines="1"
     android:textColor="@color/expand_tab_item_textcolor_selector">
 
 </ToggleButton>
