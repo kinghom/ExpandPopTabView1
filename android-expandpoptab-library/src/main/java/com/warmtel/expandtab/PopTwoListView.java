@@ -50,7 +50,7 @@ public class PopTwoListView extends LinearLayout {
 
         parentListViewAdapter = new PopViewAdapter(context);
         parentListViewAdapter.setTextSize(16);
-        parentListViewAdapter.setSelectorResId(R.drawable.expand_tab_parent_item_selected_new, R.drawable.expand_tab_popview_item_selector);
+        parentListViewAdapter.setSelectorResId(R.drawable.expand_tab_parent_item_selected_new2, R.drawable.expand_tab_popview_item_selector);
         parentListView.setAdapter(parentListViewAdapter);
         parentListViewAdapter.setOnItemClickListener(new PopViewAdapter.OnItemClickListener() {
 
