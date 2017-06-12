@@ -35,9 +35,9 @@ public class ExpandPopTabActivity extends AppCompatActivity {
         setConfigsDatas();
 
         expandTabView = (ExpandPopTabView) findViewById(R.id.expandtab_view);
-        addItem(expandTabView, mPriceLists, "", "价格");
+        /*addItem(expandTabView, mPriceLists, "", "价格");
         addItem(expandTabView, mFavorLists, "默认", "排序");
-        addItem(expandTabView, mSortLists, "优惠最多", "优惠");
+        addItem(expandTabView, mSortLists, "优惠最多", "优惠");*/
         addItem(expandTabView, mParentLists, mChildrenListLists, "锦江区", "合江亭", "区域");
 //        addItem(expandTabView, mParentLists, mChildrenListLists, null, null, "区域");
     }
