@@ -18,7 +18,7 @@
             android:dividerHeight="1px"
             android:divider="@color/no_color"
             android:fadingEdgeLength="0dip"
-            android:background="@color/white" >
+            android:background="@color/white">
         </ListView>
         
         <ListView
