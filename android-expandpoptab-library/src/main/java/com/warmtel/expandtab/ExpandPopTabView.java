@@ -170,7 +170,7 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
             mPopupWindow.setContentView(mViewLists.get(mSelectPosition));
         }
         //mPopupWindow.showAsDropDown(this, 0, 0);
-        //解决7.0的popwindow在上方问题
+        //解决7.0的popwindow永远在上方问题
         if(Build.VERSION.SDK_INT<24){
             mPopupWindow.showAsDropDown(this, 0, 0);
         }else {
