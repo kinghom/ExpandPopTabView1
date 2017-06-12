@@ -131,13 +131,15 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
         if (mPopupWindow == null) {
             mPopupWindow = new PopupWindow(mViewLists.get(mSelectPosition), mDisplayWidth, mDisplayHeight);
             mPopupWindow.setAnimationStyle(R.style.PopupWindowAnimation);
-            mPopupWindow.setFocusable(false);
+            mPopupWindow.setFocusable(true);
             mPopupWindow.setOutsideTouchable(true);
+            mPopupWindow.setOnDismissListener(this);
         }
 
         if (mSelectedToggleBtn.isChecked()) {
             if (!mPopupWindow.isShowing()) {
                 showPopView();
+                //Toast.makeText(mContext, "打开", Toast.LENGTH_SHORT).show();
             } else {
                 mPopupWindow.setOnDismissListener(this);
                 mPopupWindow.dismiss();
@@ -158,6 +160,7 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
             mPopupWindow.dismiss();
             if (mSelectedToggleBtn != null) {
                 mSelectedToggleBtn.setChecked(false);
+                //Toast.makeText(mContext, "expand", Toast.LENGTH_SHORT).show();
             }
             return true;
         } else {
@@ -182,8 +185,8 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
 
     @Override
     public void onDismiss() {
-        showPopView();
-        mPopupWindow.setOnDismissListener(null);
+        /*showPopView();
+        mPopupWindow.setOnDismissListener(null);*/
+        mSelectedToggleBtn.setChecked(false);
     }
-
 }
