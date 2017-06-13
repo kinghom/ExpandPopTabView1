@@ -38,7 +38,10 @@ public class ExpandPopTabActivity extends AppCompatActivity {
         /*addItem(expandTabView, mPriceLists, "", "价格");
         addItem(expandTabView, mFavorLists, "默认", "排序");
         addItem(expandTabView, mSortLists, "优惠最多", "优惠");*/
-        addItem(expandTabView, mParentLists, mChildrenListLists, "锦江区", "合江亭", "区域");
+        /**
+         * 后三位参数分别是一级菜单默认选择id，二级菜单默认选择id，显示提示
+         */
+        addItem(expandTabView, mParentLists, mChildrenListLists, "11", "2", "区域");
 //        addItem(expandTabView, mParentLists, mChildrenListLists, null, null, "区域");
     }
 

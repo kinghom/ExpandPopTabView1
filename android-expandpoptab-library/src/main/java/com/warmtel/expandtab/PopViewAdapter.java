@@ -55,7 +55,7 @@ public class PopViewAdapter extends BaseAdapter {
 
     public void setSelectedPositionNotify(int position) {
         if (list != null && list.size() > 0) {
-            selectorText = list.get(position).getValue();
+            selectorText = list.get(position).getKey();
             notifyDataSetChanged();
         }
     }
@@ -85,7 +85,7 @@ public class PopViewAdapter extends BaseAdapter {
         }
 
         KeyValueBean keyValueBean = (KeyValueBean) getItem(position);
-        if (keyValueBean.getValue().equals(selectorText)) {
+        if (keyValueBean.getKey().equals(selectorText)) {
             view.setBackgroundResource(selectorResId);
         } else {
             view.setBackgroundResource(normalResId);

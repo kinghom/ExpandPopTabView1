@@ -94,7 +94,7 @@ public class PopTwoListView extends LinearLayout {
         parentListViewAdapter.setSelectorText(mDefaultParentText);
         int position = 0;
         for(KeyValueBean keyValueBean : groups){
-            if(keyValueBean.getValue().equals(mDefaultParentText)){
+            if(keyValueBean.getKey().equals(mDefaultParentText)){
                 break;
             }
             ++position;
