@@ -71,7 +71,6 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
         mDisplayHeight = dm.heightPixels;
         setOrientation(LinearLayout.HORIZONTAL);
     }
-
     public void addItemToExpandTab(String tabTitle, ViewGroup tabItemView) {
         ToggleButton tButton = (ToggleButton) LayoutInflater.from(mContext).inflate(R.layout.expand_tab_toggle_button, this, false);
         if(mToggleBtnBackground != -1){

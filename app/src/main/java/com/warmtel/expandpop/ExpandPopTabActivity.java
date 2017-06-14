@@ -3,6 +3,8 @@ package com.warmtel.expandpop;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.alibaba.fastjson.JSONObject;
 import com.warmtel.expandpop.dto.ConfigAreaDTO;
@@ -26,6 +28,8 @@ public class ExpandPopTabActivity extends AppCompatActivity {
     private List<KeyValueBean> mPriceLists;
     private List<KeyValueBean> mSortLists;
     private List<KeyValueBean> mFavorLists;
+    private Button test;
+    PopTwoListView popTwoListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +39,20 @@ public class ExpandPopTabActivity extends AppCompatActivity {
         setConfigsDatas();
 
         expandTabView = (ExpandPopTabView) findViewById(R.id.expandtab_view);
+        test = (Button) findViewById(R.id.test);
+        popTwoListView = new PopTwoListView(this);
         /*addItem(expandTabView, mPriceLists, "", "价格");
         addItem(expandTabView, mFavorLists, "默认", "排序");
         addItem(expandTabView, mSortLists, "优惠最多", "优惠");*/
         /**
          * 后三位参数分别是一级菜单默认选择id，二级菜单默认选择id，显示提示
          */
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popTwoListView.setDefaultSelect();
+            }
+        });
         addItem(expandTabView, mParentLists, mChildrenListLists, "11", "2", "区域");
 //        addItem(expandTabView, mParentLists, mChildrenListLists, null, null, "区域");
     }
@@ -60,7 +72,7 @@ public class ExpandPopTabActivity extends AppCompatActivity {
 
     public void addItem(ExpandPopTabView expandTabView, List<KeyValueBean> parentLists,
                         List<ArrayList<KeyValueBean>> childrenListLists, String defaultParentSelect, String defaultChildSelect, String defaultShowText) {
-        PopTwoListView popTwoListView = new PopTwoListView(this);
+        //PopTwoListView popTwoListView = new PopTwoListView(this);
         popTwoListView.setDefaultSelectByValue(defaultParentSelect, defaultChildSelect);
         //distanceView.setDefaultSelectByKey(defaultParent, defaultChild);
         popTwoListView.setCallBackAndData(expandTabView, parentLists, childrenListLists, new PopTwoListView.OnSelectListener() {

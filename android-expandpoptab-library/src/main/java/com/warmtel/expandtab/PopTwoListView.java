@@ -87,7 +87,7 @@ public class PopTwoListView extends LinearLayout {
                 });
     }
 
-    private void setDefaultSelect(){
+    public void setDefaultSelect(){
         if(children.size() <= 0){
             return;
         }
