@@ -104,7 +104,6 @@ public class PopTwoListView extends LinearLayout {
         childListViewAdapter.setSelectorText(mDefaultChildredText);
         childListViewAdapter.setList(childrenItem);
     }
-
     private void setDefaultSelectBykey(){
         if(children.size() <= 0){
             return;
