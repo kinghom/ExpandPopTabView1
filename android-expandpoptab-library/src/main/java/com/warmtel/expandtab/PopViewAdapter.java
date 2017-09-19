@@ -91,8 +91,9 @@ public class PopViewAdapter extends BaseAdapter {
             view.setBackgroundResource(normalResId);
         }
         int pading = context.getResources().getDimensionPixelSize(R.dimen.expand_tab_popview_padingtop);
-
-        view.setText(keyValueBean.getValue());
+        if(!keyValueBean.getValue().equals("")){
+            view.setText(keyValueBean.getValue());
+        }
         view.setTag(position);
         if(textSize != -1) {
             view.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
