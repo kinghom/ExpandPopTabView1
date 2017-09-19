@@ -110,7 +110,7 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
             popContainerView.setBackgroundColor(Color.parseColor("#b0000000"));
         }
         //(int) (mDisplayHeight * 0.7) 可以设置高度为该值（屏幕的0.7倍）RelativeLayout.LayoutParams.WRAP_CONTENT
-        RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, (int) (mDisplayHeight * 0.8));
+        RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, (int) (mDisplayHeight * 0.7));
         popContainerView.addView(tabItemView, rl);
         popContainerView.setOnClickListener(new OnClickListener() {
             @Override
@@ -124,7 +124,9 @@ public class ExpandPopTabView extends LinearLayout implements OnDismissListener 
 
     public void setToggleButtonText(String tabTitle){
         ToggleButton toggleButton = (ToggleButton) getChildAt(mSelectPosition);
-        toggleButton.setText(tabTitle);
+        if(tabTitle!=null||!tabTitle.equals("")){
+            toggleButton.setText(tabTitle);
+        }
     }
 
     private void expandPopView() {
